@@ -34,6 +34,7 @@ public class LogginFilter implements Filter {
         long delta = System.currentTimeMillis() - time;
         logger.info("request for " + uri + " tool " + delta + " ms");
 
+
     }
 
     @Override public void destroy() {
