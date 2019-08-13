@@ -1,5 +1,6 @@
 package com.atul.security.controller;
 
+import java.security.Principal;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +17,11 @@ public class BookController {
 
     public BookController(final RestTemplate template) {
         this.restTemplate = template;
+    }
+
+    @GetMapping("/greeting")
+    public String getString(final Principal principal) {
+        return "Hello " + principal.getName() + " !";
     }
 
     @GetMapping("/books/{isbn}")
