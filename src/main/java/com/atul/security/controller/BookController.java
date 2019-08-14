@@ -29,6 +29,7 @@ public class BookController {
        final ResponseEntity<String> responseEntity =
         restTemplate.exchange("https://www.googleapis.com/books/v1/volumes?q=isbn:"+isbn, HttpMethod.GET, null,
                 String.class);
+
        return responseEntity.getBody();
     }
 
